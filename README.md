@@ -36,56 +36,39 @@ By exploring these questions, actionable insights are drived to help digital pay
 
 ---
 
-## 📊 Analysis & Key Visualizations (select highlights)
+## 📊 Analysis & Key Visualizations
 
-### 1. Transaction Success vs Failure (counts & %)
-- *95% success, 5% failed* (visualized as count plot + % stacked view).  
-- Insight: System largely reliable; failures concentrated in certain devices/networks.
+### 1. 📈 Transaction Outcome: Success vs Failure
+<img src="images/transaction_success_failure.png" alt="Transaction Outcome" width="600"/>  
+*Insight:* ~95% of UPI transactions are successful. Only ~5% fail, showing that the system is largely reliable. Failures are concentrated in Android + 4G, signaling infra/platform risks.
 
-### 2. Fraud Prevalence
-- *Fraudulent transactions ≈ 0.2%* of total — highly imbalanced.  
-- Insight: Detection is a rare-event problem; models must handle class imbalance.
+---
 
-### 3. Fraud vs Transaction Outcome
-- *Most fraudulent transactions (~450+) were processed as successful*; only a few failed.  
-- Insight: Many frauds slip past approval — prevention must act pre-authorization.
+### 2. 🔍 Fraud by Transaction Type
+<img src="images/fraud_by_transaction_type.png" alt="Fraud by Type" width="600"/>  
+*Insight:* Peer-to-Peer (P2P) transactions have the highest fraud count, while Recharge transactions — though fewer — show the *highest fraud rate (%)*.  
+This means P2P frauds are volume-driven, while Recharges are disproportionately riskier.
 
-### 4. Time-based patterns
-- *Most transactions* happen between *15:00–24:00*.  
-- *Fraud rate peaks at ~4:00 AM* (early-morning spike) and shows a big count spike around *20:00 (8 PM)*; fraud remains high in afternoons/evenings.  
-- Insight: Fraudsters exploit both off-peak low-vigilance hours and evening high-volume windows.
+---
 
-### 5. Day / Weekend
-- Fraud counts are fairly even across weekdays, but *weekend fraud rate per day is higher* (i.e., fewer transactions overall, but proportionally more fraud).  
-- Insight: Weekends are disproportionately riskier per transaction.
+### 3. 🛒 Fraud by Merchant Category
+<img src="images/fraud_by_merchant.png" alt="Fraud by Merchant" width="600"/>  
+*Insight:* Grocery and Food merchants see the *highest fraud counts*, while Education has the lowest. Fraudsters target high-frequency, essential spends where small frauds may go unnoticed.
 
-### 6. Transaction Type
-- *P2P has the highest fraud count* (most cases).  
-- *Recharge shows the highest fraud rate (%)* despite low counts.  
-- Insight: Different defenses needed — P2P for volume-based monitoring, Recharge for stricter per-txn checks.
+---
 
-### 7. Merchant Category & Amount
-- *Grocery & Food* show highest transaction volumes and highest fraud counts; *Education* the lowest.  
-- *Median fraud amount = ₹618, **mode ≈ ₹162*.  
-- *Most frauds in ₹0–₹500 range (~200 cases); majority of frauds < ₹5,000.*  
-- Insight: Fraudsters prefer low-to-mid amounts; small-ticket frauds add up.
+### 4. 🕒 Fraud by Time of Day
+<img src="images/fraud_by_hour.png" alt="Fraud by Hour" width="600"/>  
+*Insight:* Fraud peaks *late at night (~4 AM)* and again *around 8 PM*.  
+At night, fraudsters exploit low vigilance; in the evening, they hide within high transaction volumes. Weekends also show higher fraud rates per transaction.
 
-### 8. Demographics & Geography
-- *26–35 age group* shows the highest fraud counts; older groups have significantly fewer incidents.  
-- *Maharashtra & Karnataka* lead in fraud counts (sender-side).  
-- Insight: Targeted awareness & monitoring for active younger cohorts and high-activity states.
+---
 
-### 9. Banks, Apps, Devices & Networks
-- *SBI* registers the highest fraud counts (both sender & receiver).  
-- *Paytm* shows the highest fraud count among apps.  
-- *Android devices* have the most frauds and failures; *Web* the least.  
-- *4G networks* see more fraud & failures than 3G (likely reflects volume).  
-- Insight: Platform-, bank-, and device-focused controls will be more effective than one-size-fits-all.
+### 5. 🏦 Fraud by Bank & UPI App
+<img src="images/fraud_by_bank_app.png" alt="Fraud by Bank & App" width="600"/>  
+*Insight:* SBI shows the *highest fraud count* (both sender & receiver side).  
+Among apps, *Paytm leads in fraud cases*, followed by PhonePe and GPay. This highlights where stronger fraud defenses are most urgently needed.
 
-### 10. Correlations (numeric)
-- Positive correlation: *fraud_flag ↔ amount, **fraud_flag ↔ hour_of_day, **fraud_flag ↔ is_weekend*.  
-- Negative correlation: *hour_of_day ↔ amount, **is_weekend ↔ amount*.  
-- Insight: Fraud is linked to specific hours/weekend behavior and amount dynamics; combine time and amount signals for risk scoring.
 
 ---
 
