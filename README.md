@@ -89,7 +89,7 @@ By exploring these questions, actionable insights are drived to help digital pay
 
 ---
 
-## 🔑 Key Findings (short)
+## 🔑 Key Findings
 - Fraud is rare (≈0.2%) but concentrated: *P2P (by count), Recharge (by rate%), Grocery/Food (by count)*.  
 - *26–35* most targeted; *Maharashtra/Karnataka* hotspots.  
 - *SBI* & *Paytm* prominently present in fraud counts.  
@@ -98,7 +98,7 @@ By exploring these questions, actionable insights are drived to help digital pay
 
 ---
 
-## 💡 Business Recommendations (Q → Action style)
+## 💡 Business Recommendations 
 *P2P is the highest in fraud count. What next?*  
 - Add velocity checks for repetitive transfers, flag repeated small transfers to new payees, and apply lightweight friction (e.g., contextual OTP) for suspicious flows.
 
