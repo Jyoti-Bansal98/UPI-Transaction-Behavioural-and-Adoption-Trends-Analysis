@@ -1,116 +1,127 @@
 # 💳 Decoding UPI Transactions: Behavioral & Adoption Trends 2024
 
-## 🎯 Project Objective
-Why do UPI transactions fail or get flagged as fraud?  
-Which *transaction types, banks, devices, or networks* face the highest risks?  
-How do fraud patterns vary across *states, user age groups, and merchant categories*?  
+## 🔹 Project Objective
+UPI (Unified Payments Interface) has transformed digital transactions in India, but with growth comes challenges: rising frauds, risky transaction types, and vulnerable time patterns.  
 
-This project explores a UPI transaction dataset to uncover patterns in *fraudulent activities, transaction failures, and user behavior, providing **actionable insights* for banks, businesses, and UPI platforms to improve security and customer trust.
+This project explores *UPI transaction data (2020–2025)* to analyze fraud distribution across payment types, transaction amounts, timings, and geographies. The goal is to uncover fraud-prone patterns and provide *business recommendations* for banks, fintechs, and regulators to strengthen digital trust.
 
 ---
 
-## 📂 Dataset Information
-- *Source:* Kaggle/UPI Transactions 2024 Dataset
-- *Dataset Link:* https://www.kaggle.com/datasets/skullagos5246/upi-transactions-2024-dataset 
-- *Rows Used:* ~2.5 lakh transactions  
-- *Columns:*
-  - transaction_id – Unique transaction identifier  
-  - sender_bank & receiver_bank – Banks facilitating the transaction  
-  - transaction_type – (P2P, Recharge, Merchant Payments, etc.)  
-  - category – Merchant category (Grocery, Food, Education, etc.)  
+## 🔹 Dataset
+- *Source: Kaggle/Public Dataset:* UPI Transactions 2024 Dataset
+- *Dataset Link:* https://www.kaggle.com/datasets/skullagos5246/upi-transactions-2024-dataset
+- *Rows:*  2,50,000 
+- *Columns:*  
+  - transaction_id – Unique transaction ID  
+  - user_id – User identifier  
   - amount – Transaction value  
-  - device_type – Android, iOS, Web  
-  - network_type – 3G, 4G, WiFi  
-  - is_fraud – Fraud flag (0/1)  
-  - is_failed – Failure flag (0/1)  
-  - user_age_group – Age group of user (18–25, 26–35, etc.)  
-  - state – Sender’s state  
-
-> Each row represents a UPI transaction with metadata about fraud, failure, and device/bank/network used.
+  - txn_type – P2P, P2M, AutoPay, QR Code, etc.  
+  - is_fraud – Fraud flag (1/0)  
+  - timestamp – Date & time of transaction  
+  - location – Region/City  
+- Description: Each row represents one UPI transaction with fraud detection status.
 
 ---
 
-## 🛠 Analysis Steps
-1. *Data Cleaning*
-   - Removed duplicates & missing values  
-   - Standardized bank names, device types, and categories  
+## 🔹 Analysis Steps
+1. *Data Cleaning & Preprocessing*
+   - Removed duplicates, invalid timestamps, and negative amounts  
+   - Derived new columns (hour, day, month, is_weekend)  
+   - Standardized txn types  
 
 2. *Exploratory Data Analysis (EDA)*
-   - Fraud & transaction failure trends by:
-     - Transaction type  
-     - Category  
-     - Age group  
-     - State & Bank  
-     - UPI Apps, Devices, and Networks  
+   - Distribution of fraud vs genuine transactions  
+   - Fraud patterns by *amount, **transaction type, **time, and **location*  
 
-3. *Statistical & Correlation Analysis*
-   - Boxplots for fraud vs non-fraud amount distributions  
-   - Correlation heatmap between fraud flag, amount, time, and weekend  
+3. *Fraud Trend & Risk Analysis*
+   - Month & hour-wise fraud patterns  
+   - Txn type vs fraud ratio  
+   - High-value fraud detection  
 
-4. *Business Insights & Recommendations*
-   - Actionable strategies for fraud prevention and improving transaction success  
-
----
-
-## 📊 Analysis & Key Visualizations
-### 1. Transaction Type Insights
-- *Highest fraud count:* P2P transactions  
-- *Lowest fraud count:* Recharge  
-- *Fraud rate %:* Highest in Recharges, lowest in P2P  
-
-### 2. Merchant Categories
-- *Most transactions:* Grocery & Food  
-- *Least transactions:* Education  
-- *Highest frauds:* Grocery & Food  
-- *Lowest frauds:* Education  
-
-### 3. User Demographics
-- *26–35 age group* faces the highest fraud risk  
-- Older users experience the *least fraud cases*  
-
-### 4. State & Bank Analysis
-- *Maharashtra & Karnataka* report the highest frauds (sender side)  
-- *SBI* dominates fraud counts across both sender & receiver banks  
-
-### 5. UPI Apps & Device/Network
-- *Paytm* leads in fraud counts among UPI apps  
-- *Android devices* face most frauds & failures; *Web* the least  
-- *4G networks* show highest frauds & failures; *3G* the lowest  
-
-### 6. Transaction Amount Patterns
-- Fraud transactions cluster mostly *below ₹5000, with median **₹618* & mode *₹162*  
-- Non-fraud outliers mostly fall between *₹2000–₹30,000*  
-
-### 7. Correlation Analysis
-- *Fraud ↔ Amount:* Positive correlation (higher amounts = higher fraud risk)  
-- *Hour of Day ↔ Amount:* Negative correlation (small transactions at odd hours)  
-- *Fraud ↔ Weekends:* Positive correlation (frauds spike on weekends)  
+4. *Business Insights*
+   - Fraud hotspots in time & geography  
+   - Which txn types are riskiest?  
+   - What actions can businesses & regulators take?  
 
 ---
 
-## 🔑 Insights & Key Findings
-- *P2P transactions* dominate fraud count, while *Recharges* have the highest fraud rate %.  
-- *Grocery & Food* transactions are most vulnerable to fraud.  
-- *Young adults (26–35)* are the most targeted age group.  
-- *SBI* records the largest share of fraud across banks.  
-- *Paytm users* are most exposed to fraud attempts.  
-- *Android + 4G users* face the greatest risk of both fraud and transaction failure.  
-- Fraudulent transactions are mostly *low to mid-value (< ₹5000)*.  
+## 🔹 Analysis & Key Visualizations  
+
+### 📌 Fraud Distribution Across Transaction Types  
+<img src="images/transaction_type_fraud.png" alt="Fraud by Transaction Type" width="600"/>  
+
+Frauds are *highest in P2P transfers*, followed by P2M (Merchant payments), Bill Payment and Recharge.
+👉 This reveals that direct peer-to-peer transfers carry the most risk, likely due to social engineering and scam-driven requests.  
 
 ---
 
-## 💡 Business Recommendations
-- *P2P Fraud Spike:* Strengthen identity checks & anomaly detection for P2P transfers.  
-- *Recharge Fraud Rate:* Why are recharges most risky? Enforce stricter validation & OTP checks.  
-- *Bank-Level Risks:* SBI should invest in advanced fraud detection & customer awareness.  
-- *UPI App Security:* Paytm should implement stronger transaction monitoring.  
-- *Device/Network:* Android + 4G users need additional safeguards; web flows should be optimized for security.  
-- *Age-Based Awareness:* Launch fraud awareness campaigns for 26–35 age group.  
-- *Low-Value Frauds:* Small-ticket transactions need equal monitoring to prevent large cumulative losses.  
+### 📌 Fraud by Transaction Amount  
+<img src="images/Fraud_Transaction_by_Amount_range.png" alt="Fraud by Amount" width="600"/>  
+
+Most frauds happen in the *₹500–₹1000 range, but the **loss impact is highest in high-value (>₹10,000) frauds*.  
+👉 Fraudsters exploit mid-value transactions to stay unnoticed while still maximizing gain. Banks need tighter velocity checks in this slab.  
 
 ---
 
-## 📌 Conclusion
-This project analyzes *2.5 lakh UPI transactions* to uncover hidden fraud patterns and transaction failures.  
-By combining *transaction type, category, device, and bank-level analysis*, we identify critical vulnerabilities in India’s UPI ecosystem.  
-These insights empower businesses, banks, and UPI platforms to *strengthen fraud detection, enhance user trust, and secure the future of digital payments*.
+### 📌 Time-of-Day Fraud Patterns  
+<img src="images/Fraud_Transaction_Counts_by_Hour_of_Day.png" alt="Fraud by Hour" width="600"/>  
+
+Frauds peak between *4 PM – 11 AM*, when user alertness and bank monitoring are relatively weaker.  
+👉 This highlights the need for AI-based real-time alerts and stricter night-time transaction monitoring.  
+
+---
+
+### 📌 Weekday vs Weekend Fraud Trends  
+<img src="images/Fraud_Distribution_by_is_Weekend.png" alt="Fraud by is_weekend" width="600"/>  
+
+Fraud counts grew sharply post-2022, aligning with UPI adoption boom. Seasonal spikes around *festive seasons* (Diwali, New Year) show fraudsters exploiting higher transaction volumes.  
+👉 Awareness campaigns must peak during festive seasons when users are most vulnerable.  
+
+---
+
+### 📌 Fraud Distribution by Transaction Status 
+<img src="images/Fraud_Distribution_by_Transaction_Status.png" alt="Fraud by Transaction Status" width="600"/>  
+
+Metro cities dominate in fraud counts (due to higher volume), but *fraud rate per 1000 transactions* is *higher in Tier-2 & Tier-3 cities*.  
+👉 This suggests awareness gaps in smaller towns where users are newer to UPI.  
+
+---
+
+## 🔹 Insights & Key Findings  
+- *P2P transactions* = highest fraud risk.  
+- *Mid-value slabs (₹500–₹2000)* are fraud hotspots, while *high-value frauds cause maximum loss per event*.  
+- *Night-time transactions* (4 PM – 11 AM) see disproportionate fraud spikes.  
+- *Tier-2/3 cities* have higher fraud rate per 1000 txn despite lower volumes.  
+- *Festive seasons* bring seasonal fraud surges.  
+
+---
+
+## 🔹 Future Outlook / Business Impact  
+
+Questions & Learnings:  
+
+1. *Why are P2P transactions most vulnerable?*  
+   → Because they lack merchant safeguards. Users often approve fraudulent “request money” pulls.  
+   Recommendation: Stronger consent + two-step approvals for unknown contacts.  
+
+2. *Why do fraudsters prefer ₹500–₹2000 transactions?*  
+   → Small enough to avoid red flags, large enough to profit.  
+   Recommendation: Implement *dynamic velocity limits* (flag multiple mid-value transfers).  
+
+3. *Why do frauds spike late at night?*  
+   → Lower user vigilance + weaker monitoring.  
+   Recommendation: Real-time AI fraud scoring + night-time risk multipliers.  
+
+4. *Are rural users equally at risk?*  
+   → Yes, but in different ways. Tier-2/3 see higher fraud rates due to lack of awareness.  
+   Recommendation: Awareness campaigns in regional languages + in-app fraud alerts.  
+
+5. *How can businesses stop seasonal fraud surges?*  
+   → By launching *“Festive Fraud Watch” campaigns* before high-volume periods.  
+   Recommendation: Push notifications + dynamic fraud models tuned to seasonal spikes.  
+
+---
+
+## 🔹 Final Note  
+This project doesn’t just analyze fraud—it helps businesses, banks, and regulators understand *where fraud hides, when it strikes hardest, and who is most at risk*.  
+By turning data into *strategic defense insights, it builds the foundation for a **safer, more trusted UPI ecosystem*.
