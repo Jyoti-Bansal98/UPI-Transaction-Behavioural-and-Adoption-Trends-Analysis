@@ -8,10 +8,9 @@ This project explores *UPI transaction data (2020–2025)* to analyze fraud dist
 ---
 
 ## 🔹 Dataset
-- *Source: Kaggle/Public Dataset:* UPI Transactions 2024 Dataset
-- *Dataset Link:* https://www.kaggle.com/datasets/skullagos5246/upi-transactions-2024-dataset
-- *Rows:*  2,50,000 
-- *Columns:*  
+- Source: Public UPI dataset (synthetic + real-world inspired patterns)  
+- Rows: ~5,00,000 transactions  
+- Columns:  
   - transaction_id – Unique transaction ID  
   - user_id – User identifier  
   - amount – Transaction value  
@@ -48,39 +47,39 @@ This project explores *UPI transaction data (2020–2025)* to analyze fraud dist
 ## 🔹 Analysis & Key Visualizations  
 
 ### 📌 Fraud Distribution Across Transaction Types  
-<img src="images/transaction_type_fraud.png" alt="Fraud by Transaction Type" width="600"/>  
+<img src="images/Fraud_by_TxnType.png" alt="Fraud by Transaction Type" width="600"/>  
 
-Frauds are *highest in P2P transfers*, followed by P2M (Merchant payments), Bill Payment and Recharge.
+Frauds are *highest in P2P transfers*, followed by QR-code transactions. P2M (merchant payments) and AutoPay remain relatively safer.  
 👉 This reveals that direct peer-to-peer transfers carry the most risk, likely due to social engineering and scam-driven requests.  
 
 ---
 
 ### 📌 Fraud by Transaction Amount  
-<img src="images/Fraud_Transaction_by_Amount_range.png" alt="Fraud by Amount" width="600"/>  
+<img src="images/Fraud_by_Amount.png" alt="Fraud by Amount" width="600"/>  
 
-Most frauds happen in the *₹500–₹1000 range, but the **loss impact is highest in high-value (>₹10,000) frauds*.  
+Most frauds happen in the *₹500–₹2000 range, but the **loss impact is highest in high-value (>₹10,000) frauds*.  
 👉 Fraudsters exploit mid-value transactions to stay unnoticed while still maximizing gain. Banks need tighter velocity checks in this slab.  
 
 ---
 
 ### 📌 Time-of-Day Fraud Patterns  
-<img src="images/Fraud_Transaction_Counts_by_Hour_of_Day.png" alt="Fraud by Hour" width="600"/>  
+<img src="images/Fraud_by_Hour.png" alt="Fraud by Hour" width="600"/>  
 
-Frauds peak between *4 PM – 11 AM*, when user alertness and bank monitoring are relatively weaker.  
+Frauds peak between *11 PM – 3 AM*, when user alertness and bank monitoring are relatively weaker.  
 👉 This highlights the need for AI-based real-time alerts and stricter night-time transaction monitoring.  
 
 ---
 
-### 📌 Weekday vs Weekend Fraud Trends  
-<img src="images/Fraud_Distribution_by_is_Weekend.png" alt="Fraud by is_weekend" width="600"/>  
+### 📌 Month-wise Fraud Trends  
+<img src="images/Fraud_by_Month.png" alt="Fraud by Month" width="600"/>  
 
 Fraud counts grew sharply post-2022, aligning with UPI adoption boom. Seasonal spikes around *festive seasons* (Diwali, New Year) show fraudsters exploiting higher transaction volumes.  
 👉 Awareness campaigns must peak during festive seasons when users are most vulnerable.  
 
 ---
 
-### 📌 Fraud Distribution by Transaction Status 
-<img src="images/Fraud_Distribution_by_Transaction_Status.png" alt="Fraud by Transaction Status" width="600"/>  
+### 📌 Location-wise Fraud Hotspots  
+<img src="images/Fraud_by_Location.png" alt="Fraud by Location" width="600"/>  
 
 Metro cities dominate in fraud counts (due to higher volume), but *fraud rate per 1000 transactions* is *higher in Tier-2 & Tier-3 cities*.  
 👉 This suggests awareness gaps in smaller towns where users are newer to UPI.  
@@ -90,7 +89,7 @@ Metro cities dominate in fraud counts (due to higher volume), but *fraud rate pe
 ## 🔹 Insights & Key Findings  
 - *P2P transactions* = highest fraud risk.  
 - *Mid-value slabs (₹500–₹2000)* are fraud hotspots, while *high-value frauds cause maximum loss per event*.  
-- *Night-time transactions* (4 PM – 11 AM) see disproportionate fraud spikes.  
+- *Night-time transactions* (11 PM – 3 AM) see disproportionate fraud spikes.  
 - *Tier-2/3 cities* have higher fraud rate per 1000 txn despite lower volumes.  
 - *Festive seasons* bring seasonal fraud surges.  
 
