@@ -129,9 +129,3 @@ By exploring these questions, actionable insights are drived to help digital pay
 This analysis of ~250k UPI transactions surfaces *where fraud hides and who it targets*: younger, active users, P2P flows, grocery/food merchants, Android + 4G users, and specific states/banks/apps. Though fraud is a tiny fraction (~0.2%), its patterns are consistent — enabling focused defenses that preserve user convenience while dramatically reducing risk.
 
 ---
-
-## 📁 Artifacts & Next steps
-- Cleaned dataset CSV: cleaned_upi_transactions.csv  
-- Key tables exported: fraud_rate_by_bank.csv, fraud_by_amount_bin.csv, fraud_by_hour.csv  
-- Notebook: UPI_Fraud_Analysis.ipynb (contains visualizations and captions)  
-- Suggested next step: build a lightweight real-time risk-scoring prototype using hour+amount+device+txn_type signals.
