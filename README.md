@@ -10,7 +10,8 @@ This project explores a UPI transaction dataset to uncover patterns in *fraudule
 ---
 
 ## 📂 Dataset Information
-- *Source:* UPI Transaction Dataset (synthetic & anonymized)  
+- *Source:* Kaggle/UPI Transactions 2024 Dataset
+- *Dataset Link:* https://www.kaggle.com/datasets/skullagos5246/upi-transactions-2024-dataset 
 - *Rows Used:* ~2.5 lakh transactions  
 - *Columns:*
   - transaction_id – Unique transaction identifier  
