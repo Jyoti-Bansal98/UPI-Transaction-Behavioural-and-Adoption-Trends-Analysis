@@ -1,30 +1,18 @@
 # 💳 Decoding UPI Transactions: Behavioral & Adoption Trends 2024
 
 ## 🎯 Project Objective
-How and where do UPI transactions fail or get flagged as fraud?  
-Which transaction types, banks, apps, devices, time windows, and user segments are most at risk?  
-This project analyzes ~250,000 UPI transactions to uncover fraud patterns, failure hotspots, and actionable recommendations for banks, fintechs, and product teams.
+This project conducts an in-depth analysis of 2.5 lakh UPI transactions from 2024 to uncover user behaviour patterns, transaction dynamics (P2P vs P2M), peak usage periods, and bank-wise adoption trends. which factors influence users to complete or abandon transactions? Why do certain banks or user segments exhibit higher engagement?
+By exploring these questions, actionable insights are drived to help digital payment platforms enhance user experience, optimize transaction completion, and drive greater adoption across diverse user segments.
 
 ---
 
 ## 📂 Dataset Information
-- *Source:* Kaggle / internal (anonymized & synthetic blend for analysis)  
+- *Source:* Kaggle / Public Dataset- UPI Transactions 2024 Dataset
+- *Dataset Link:* https://www.kaggle.com/datasets/skullagos5246/upi-transactions-2024-dataset
 - *Rows used:* ~250,000 transactions  
-- *Key columns:*
-  - transaction_id – Unique transaction id  
-  - timestamp / hour_of_day – Time of transaction  
-  - transaction_type – P2P, Recharge, Merchant, etc.  
-  - merchant_category – Grocery, Food, Education, etc.  
-  - amount – INR amount (int)  
-  - transaction_status – Success / Failed  
-  - fraud_flag – 0 / 1  
-  - sender_age_group, receiver_age_group – age buckets (18–25, 26–35, …)  
-  - sender_state – sender region/state  
-  - sender_bank, receiver_bank – bank codes/names  
-  - device_type – Android / iOS / Web  
-  - network_type – 3G / 4G / WiFi / etc.  
-  - upi_app – app name (Paytm, PhonePe, GPay, …)
+- *Key columns:* transaction_id , timestamp , transaction_type, merchant_category, amount(INR), transaction_status, fraud_flag, sender_age_group, receiver_age_group, sender_state, sender_bank, receiver_bank, device_type, network_type, upi_app
 
+  
 > Note: dataset was cleaned (stripped, standardized, timestamp parsed), categorical orders fixed for plotting, and synthetic upi_app column added for richer analysis.
 
 ---
