@@ -41,12 +41,12 @@ By exploring these questions, actionable insights are drived to help digital pay
 ### 1. 📈 Fraud Distribution by Transaction Status
 <img src="images/Fraud_Distribution_by_Transaction_Status.png" alt="Transaction Outcome" width="600"/>   
 The majority of fraudulent transactions were processed successfully, with over 450 cases slipping through undetected. Only a small fraction of fraud attempts failed, highlighting how easily fraudsters manage to exploit the system. This indicates a critical gap in fraud prevention at the transaction approval stage.
+
 ---
 
 ### 2. 🔍 Fraud by Transaction Type
-<img src="images/fraud_by_transaction_type.png" alt="Fraud by Type" width="600"/>  
-*Insight:* Peer-to-Peer (P2P) transactions have the highest fraud count, while Recharge transactions — though fewer — show the *highest fraud rate (%)*.  
-This means P2P frauds are volume-driven, while Recharges are disproportionately riskier.
+<img src="images/transaction_type_fraud.png" alt="Fraud by Type" width="600"/>  
+Most fraudulent activity clusters around peer-to-peer (P2P) transactions, revealing the hidden risks of direct money transfers. Meanwhile, recharge transactions remain relatively safe, showing minimal fraud in this category—an important signal for prioritizing fraud monitoring.
 
 ---
 
