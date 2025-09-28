@@ -39,8 +39,7 @@ By exploring these questions, actionable insights are drived to help digital pay
 ## 📊 Analysis & Key Visualizations
 
 ### 1. 📈 Fraud Distribution by Transaction Status
-<img src="images/Fraud_Distribution_by_Transaction_Status.png" alt="Transaction Outcome" width="600"/>  
-
+<img src="images/Fraud_Distribution_by_Transaction_Status.png" alt="Transaction Outcome" width="600"/>   
 The majority of fraudulent transactions were processed successfully, with over 450 cases slipping through undetected. Only a small fraction of fraud attempts failed, highlighting how easily fraudsters manage to exploit the system. This indicates a critical gap in fraud prevention at the transaction approval stage.
 ---
 
