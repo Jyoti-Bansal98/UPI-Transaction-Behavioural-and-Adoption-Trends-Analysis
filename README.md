@@ -39,20 +39,21 @@ By exploring these questions, actionable insights are drived to help digital pay
 ## 📊 Analysis & Key Visualizations
 
 ### 1. 📈 Fraud Distribution by Transaction Status
-<img src="images/Fraud_Distribution_by_Transaction_Status.png" alt="Transaction Outcome" width="600"/>   
+<img src="images/Fraud_Distribution_by_Transaction_Status.png" alt="Transaction Outcome" width="500"/>   
 The majority of fraudulent transactions were processed successfully, with over 450 cases slipping through undetected. Only a small fraction of fraud attempts failed, highlighting how easily fraudsters manage to exploit the system. This indicates a critical gap in fraud prevention at the transaction approval stage.
 
 ---
 
 ### 2. 🔍 Fraud by Transaction Type
-<img src="images/transaction_type_fraud.png" alt="Fraud by Type" width="600"/>  
+<img src="images/transaction_type_fraud.png" alt="Fraud by Type" width="500"/>  
 Most fraudulent activity clusters around peer-to-peer (P2P) transactions, revealing the hidden risks of direct money transfers. Meanwhile, recharge transactions remain relatively safe, showing minimal fraud in this category—an important signal for prioritizing fraud monitoring.
 
 ---
 
 ### 3. 🛒 Fraud by Merchant Category
-<img src="images/merchant_category_fraud.png" alt="Fraud by Merchant" width="600"/>  
+<img src="images/merchant_category_fraud.png" alt="Fraud by Merchant" width="500"/>  
 Most fraudulent activities are concentrated in the Grocery and Food categories, reflecting the high transaction volume in these sectors. In contrast, Education-related transactions see minimal fraud, likely due to their lower frequency and more structured payment patterns.
+
 ---
 
 ### 4. 🕒 Fraud by Time of Day
@@ -62,8 +63,15 @@ Fraud attempts were minimal during the early morning hours. However, they surged
 ---
 
 ### 5. 🏦 Fraud by UPI App
-<img src="images/Fraud_Distribution_by_UPI_App.png" alt="Fraud by Bank & App" width="600"/>  
+<img src="images/Fraud_Distribution_by_UPI_App.png" alt="Fraud by Bank & App" width="500"/>  
 Analyzing UPI apps reveals that Paytm accounts for the highest number of fraudulent transactions. This suggests that fraudsters may be targeting apps with a larger user base or higher transaction volume, underlining the importance of enhanced security measures on such platforms.
+
+---
+
+##  📊  Explore More Visualizations
+
+Only a few key charts are shown here. For the detailed visualizations with story telling insights, explore the full [Jupyter Notebook](./UPI%20Transactions%20Analysis.ipynb) or check the [Visualizations](./images)
+
 
 
 ---
