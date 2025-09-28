@@ -51,22 +51,19 @@ Most fraudulent activity clusters around peer-to-peer (P2P) transactions, reveal
 ---
 
 ### 3. 🛒 Fraud by Merchant Category
-<img src="images/fraud_by_merchant.png" alt="Fraud by Merchant" width="600"/>  
-*Insight:* Grocery and Food merchants see the *highest fraud counts*, while Education has the lowest. Fraudsters target high-frequency, essential spends where small frauds may go unnoticed.
-
+<img src="images/merchant_category_fraud.png" alt="Fraud by Merchant" width="600"/>  
+Most fraudulent activities are concentrated in the Grocery and Food categories, reflecting the high transaction volume in these sectors. In contrast, Education-related transactions see minimal fraud, likely due to their lower frequency and more structured payment patterns.
 ---
 
 ### 4. 🕒 Fraud by Time of Day
-<img src="images/fraud_by_hour.png" alt="Fraud by Hour" width="600"/>  
-*Insight:* Fraud peaks *late at night (~4 AM)* and again *around 8 PM*.  
-At night, fraudsters exploit low vigilance; in the evening, they hide within high transaction volumes. Weekends also show higher fraud rates per transaction.
+<img src="images/Fraud_Transaction_Counts_by_Hour_of_Day.png" alt="Fraud by Hour" width="600"/>  
+Fraud attempts were minimal during the early morning hours. However, they surged sharply around 8 PM (20th hour) and remained consistently high throughout the afternoon and evening, signaling a clear time-of-day vulnerability.
 
 ---
 
-### 5. 🏦 Fraud by Bank & UPI App
-<img src="images/fraud_by_bank_app.png" alt="Fraud by Bank & App" width="600"/>  
-*Insight:* SBI shows the *highest fraud count* (both sender & receiver side).  
-Among apps, *Paytm leads in fraud cases*, followed by PhonePe and GPay. This highlights where stronger fraud defenses are most urgently needed.
+### 5. 🏦 Fraud by UPI App
+<img src="images/Fraud_Distribution_by_UPI_App.png" alt="Fraud by Bank & App" width="600"/>  
+Analyzing UPI apps reveals that Paytm accounts for the highest number of fraudulent transactions. This suggests that fraudsters may be targeting apps with a larger user base or higher transaction volume, underlining the importance of enhanced security measures on such platforms.
 
 
 ---
